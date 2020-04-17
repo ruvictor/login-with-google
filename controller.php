@@ -8,7 +8,7 @@ if (isset($_GET['code'])) {
     header('Location: index.php');
     exit();
 }
-if(isset($token["error"]) != "invalid_grant"){
+if(isset($token["error"])){
     // get data from google
     $oAuth = new Google_Service_Oauth2($gClient);
     $userData = $oAuth->userinfo_v2_me->get();
